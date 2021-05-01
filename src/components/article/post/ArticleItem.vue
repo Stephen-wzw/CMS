@@ -53,12 +53,7 @@ export default {
   },
   methods: {
     toArticle(articleId) {
-      this.$router.push(
-        {
-          path: '/article',
-          params: { articleId }
-        }
-      ).catch(err => err)
+      this.$router.push({path: `/article/${articleId}`}).catch(err => err)
     },
   },
 };

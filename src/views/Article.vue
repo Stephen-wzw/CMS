@@ -48,7 +48,6 @@ export default {
   created() {
     this.getAllArticle();
     this.getCategory();
-    console.log(this.$EventBus);
   },
   methods: {
     // 获取所有文章
@@ -62,7 +61,6 @@ export default {
     getCategory() {
       getCategory().then((res) => {
         this.category.push(...res);
-        console.log(this.category);
       });
     },
 
