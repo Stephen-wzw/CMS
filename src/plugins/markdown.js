@@ -1,4 +1,5 @@
 const highlight = require("highlight.js");
+import 'highlight.js/styles/atom-one-dark.css';
 const marked = require("marked");
 const tocObj = {
   add: function(text, level) {
