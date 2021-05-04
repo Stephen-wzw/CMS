@@ -7,7 +7,7 @@
       <div class="article-info">
         <span>阅读 {{ article.articleViewCount }}</span>
         <span class="split-line"> | </span>
-        <span>点赞 {{ article.LikeCount  }}</span>
+        <span>点赞 {{ article.articleLikeCount  }}</span>
         <span class="split-line"> | </span>
         <span>发布于 {{ articleCreateTime }}</span>
       </div>
