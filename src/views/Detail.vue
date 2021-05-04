@@ -2,7 +2,7 @@
   <div class="detail">
     <nav-bar />
     <div class="content">
-      <mark-down :data="articleContent" />
+      <mark-down :article="article" />
     </div>
     <footer-bar />
   </div>
@@ -23,8 +23,7 @@ export default {
   },
   data() {
     return {
-      article: [],
-      articleContent: ""
+      article: {},
     };
   },
   mounted() {
@@ -35,7 +34,6 @@ export default {
       const articleId = this.$route.params.id;
       getArticleById(articleId).then((res) => {
         this.article = res;
-        this.articleContent = res.articleContent;
         console.log(this.article);
       });
     },
