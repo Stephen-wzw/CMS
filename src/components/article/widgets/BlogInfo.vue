@@ -1,5 +1,5 @@
 <template>
-  <div class="widget-container">
+  <div class="widget-container blog-info">
     <div class="widget-header">
       博客简介
     </div>
@@ -13,4 +13,9 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.blog-info {
+  position: sticky;
+  top: 5rem
+}
+</style>
