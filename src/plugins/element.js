@@ -12,6 +12,7 @@ import {
   Option,
   OptionGroup,
   Loading,
+  Backtop,
 } from 'element-ui';
 
 const element = {
@@ -28,7 +29,7 @@ const element = {
     Vue.use(Select)
     Vue.use(Option)
     Vue.use(OptionGroup)
-
+    Vue.use(Backtop)
     Vue.use(Loading.directive)
 
     Vue.prototype.$loading = Loading.service;

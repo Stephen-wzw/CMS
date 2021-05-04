@@ -6,6 +6,7 @@
       <article-list :article="article" />
       <right-wrap />
     </div>
+    <el-backtop>Up</el-backtop>
     <footer-bar />
   </div>
 </template>
