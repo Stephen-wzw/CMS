@@ -71,21 +71,22 @@ a:active {
 
 /*对 markdown 样式的补充*/
 pre {
-	display: block;
-	padding: 10px;
-	margin: 0 0 10px;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #abb2bf;
-	background: #23241f;
-	word-break: break-all;
-	word-wrap: break-word;
-	overflow: auto;
-	border-radius: 5px;
+  display: block;
+  padding: 10px;
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #abb2bf;
+  background: #23241f;
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow: auto;
+  border-radius: 5px;
 }
 
 h1 {
   text-align: center;
+  border-bottom: 1px dashed #e7eaec;
 }
 
 h1,
@@ -99,59 +100,50 @@ h6 {
   margin-top: -3.286rem;
 }
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 p > code:not([class]) {
-	padding: 2px 4px;
-	font-size: 90%;
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .article-detail {
-	font-size: 16px;
+  font-size: 16px;
   line-height: 30px;
 }
 
 .article-detail .desc ul,
 .article-detail .desc ol {
-	color: #333333;
-	margin: 1.5em 0 0 25px;
+  color: #333333;
+  margin: 1.5em 0 0 25px;
 }
 
 .article-detail .desc h1,
 .article-detail .desc h2 {
-	border-bottom: 1px solid #eee;
-	padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }
 
 .article-detail .desc a {
-	color: #009a61;
+  color: #009a61;
 }
 
 .article-detail blockquote {
-	margin: 0 0 1em;
-	background-color: rgb(220, 230, 240);
-	padding: 1em 0 0.5em 0.5em;
-	border-left: 6px solid rgb(181, 204, 226);
+  margin: 0 0 1em;
+  background-color: rgb(220, 230, 240);
+  padding: 1em 0 0.5em 0.5em;
+  border-left: 6px solid rgb(181, 204, 226);
 }
 
 /* 锚点样式 */
-.anchor {
-  display: block;
-  position: sticky;
-  top: 213px;
-  margin-top: 213px;
-  margin-left: 5rem;
-  /* border-left: 1px solid #eee; */
-}
-
 .anchor-ul {
   position: relative;
   top: 0;
@@ -162,7 +154,7 @@ img {
   box-shadow: 0 0px 0px #fff;
 }
 
-.anchor>li.active {
+.anchor > li.active {
   color: #009a61;
 }
 
