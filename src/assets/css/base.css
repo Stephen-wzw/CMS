@@ -171,3 +171,13 @@ img {
 .anchor a:hover {
   color: #1890ff;
 }
+
+/* element样式补充 */
+.page-component__scroll  {
+  height: 100%;
+}
+
+.el-scrollbar__wrap {
+  overflow: scroll;
+  height: 100%;
+} 
