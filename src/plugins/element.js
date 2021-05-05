@@ -13,6 +13,9 @@ import {
   OptionGroup,
   Loading,
   Backtop,
+  Form,
+  FormItem,
+  Avatar,
 } from 'element-ui';
 
 const element = {
@@ -30,6 +33,9 @@ const element = {
     Vue.use(Option)
     Vue.use(OptionGroup)
     Vue.use(Backtop)
+    Vue.use(Form)
+    Vue.use(FormItem)
+    Vue.use(Avatar)
     Vue.use(Loading.directive)
 
     Vue.prototype.$loading = Loading.service;
