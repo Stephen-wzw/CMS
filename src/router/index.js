@@ -3,14 +3,15 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const Home = () => import("views/Home");
+// const Home = () => import("views/Home");
 const Article = () => import("views/Article");
-const Detail = () => import("views/Detail")
+const Detail = () => import("views/Detail");
+const Message = () => import("views/Message");
 
 const routes = [
   {
     path: "/",
-    component: Home,
+    component: Article,
     meta: { title: "首页" },
   },
   {
@@ -21,6 +22,10 @@ const routes = [
   {
     path: "/article/:id",
     component: Detail,
+  },
+  {
+    path: "/message",
+    component: Message,
   }
 ];
 

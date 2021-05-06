@@ -12,6 +12,7 @@
 import CommentItem from "./CommentItem";
 
 import { getAllComment } from "network/detail";
+
 export default {
   components: {
     CommentItem,
