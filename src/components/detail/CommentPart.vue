@@ -9,8 +9,9 @@
         </span>
       </div>
       <comment-panel />
-      <comment-list/>
+      <comment-list />
     </div>
+    <!-- 配合flex做布局 -->
     <div class="right hidden"></div>
   </div>
 </template>
