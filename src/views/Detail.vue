@@ -2,10 +2,23 @@
   <div class="detail">
     <nav-bar />
     <div class="content">
-      <el-button v-if="isLiked" class="like" icon="el-icon-star-off" @click="likeClick" circle></el-button>
-      <el-button v-else class="like" icon="el-icon-star-on" @click="likeClick" circle></el-button>
+      <el-button
+        v-if="isLiked"
+        class="like"
+        icon="el-icon-star-off"
+        @click="likeClick"
+        circle
+      ></el-button>
+      <el-button
+        v-else
+        class="like"
+        icon="el-icon-star-on"
+        @click="likeClick"
+        circle
+      ></el-button>
       <mark-down :article="article" />
     </div>
+    <comment-part :count="article.articleCommentCount" />
     <el-backtop>Up</el-backtop>
     <footer-bar />
   </div>
@@ -14,6 +27,7 @@
 <script>
 import NavBar from "components/common/NavBar";
 import MarkDown from "components/detail/markdown/MarkDown";
+import CommentPart from "components/detail/CommentPart";
 import FooterBar from "components/common/FooterBar";
 
 import { getArticleById, likeArticle } from "network/detail";
@@ -22,6 +36,7 @@ export default {
   components: {
     NavBar,
     MarkDown,
+    CommentPart,
     FooterBar,
   },
   data() {
@@ -33,6 +48,9 @@ export default {
   },
   mounted() {
     this.getArticle();
+    this.$EventBus.$on("commented", (commentCount) => {
+      this.article.articleCommentCount = commentCount;
+    });
   },
   methods: {
     getArticle() {
@@ -42,11 +60,16 @@ export default {
       });
     },
     likeClick() {
-      likeArticle(this.articleId).then(res => {
+      likeArticle(this.articleId).then((res) => {
         this.article.articleLikeCount = res;
         this.isLiked = !this.isLiked;
-      })
-    }
+      });
+    },
+  },
+  watch: {
+    article: function() {
+      document.title = this.article.articleTitle;
+    },
   },
 };
 </script>
@@ -71,7 +94,7 @@ export default {
 
   position: fixed;
   top: 20rem;
-  left: 4rem;
+  left: 2%;
 
   display: flex;
   justify-content: center;
