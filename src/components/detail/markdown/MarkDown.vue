@@ -60,8 +60,11 @@ export default {
   },
   computed: {
     articleCreateTime() {
-      return moment(this.article.publishTime).format('YYYY-MM-DD')
+      return moment(this.article.publishTime).format('lll')
     }
+  },
+  mounted() {
+    console.log("文章被挂载");
   },
   methods: {
     renderMarkdown() {
