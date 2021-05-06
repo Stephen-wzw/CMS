@@ -13,20 +13,22 @@ export function likeArticle(articleId) {
   });
 }
 
-export function submitComment(articleId, form) {
+export function submitComment(articleId, submit) {
   return request({
     url: `/article/${articleId}/comment`,
     method: "post",
     params: {
-      commentPersonName: form.name,
-      commentPersonEmail: form.email,
-      commentContent: form.comment,
-    }
+      commentPid: submit.replyId,
+      commentPersonName: submit.name,
+      commentPersonEmail: submit.email,
+      commentContent: submit.comment,
+      respondUser: submit.replyName,
+    },
   });
 }
 
 export function getAllComment(articleId) {
   return request({
     url: `/article/${articleId}/comment`,
-  })
+  });
 }
