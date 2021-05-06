@@ -181,3 +181,7 @@ img {
   overflow: scroll;
   height: 100%;
 } 
+
+.el-form-item {
+  margin-bottom: 0.8rem !important;
+}
