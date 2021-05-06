@@ -7,6 +7,7 @@
     <div class="menu">
       <a href="javascript:void(0)" @click="homeClick">首页</a>
       <a href="javascript:void(0)" @click="articleClick">文章</a>
+      <a href="javascript:void(0)" @click="messageClick">留言</a>
       <a href="javascript:void(0)" @click="aboutClick">关于</a>
     </div>
   </div>
@@ -22,6 +23,9 @@ export default {
     articleClick() {
       console.log("article");
       this.$router.push("/article").catch((err) => err);
+    },
+    messageClick() {
+      this.$router.push("/message").catch((err) => err)
     },
     aboutClick() {
       console.log("about");
