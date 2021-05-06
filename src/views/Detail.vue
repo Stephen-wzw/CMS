@@ -48,9 +48,13 @@ export default {
   },
   mounted() {
     this.getArticle();
+    console.log(this.article);
     this.$EventBus.$on("commented", (commentCount) => {
       this.article.articleCommentCount = commentCount;
     });
+  },
+  destroyed() {
+    this.$EventBus.$off();
   },
   methods: {
     getArticle() {
