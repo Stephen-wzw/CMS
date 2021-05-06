@@ -22,8 +22,15 @@ export default {
       articleId: this.$route.params.id,
     };
   },
-  created() {
+  mounted() {
     this.getAllComment();
+    console.log("评论列表被挂载");
+    this.$EventBus.$on("commented", () => {
+      this.getAllComment();
+    })
+  },
+  destroyed() {
+    this.$EventBus.$off();
   },
   methods: {
     getAllComment() {
