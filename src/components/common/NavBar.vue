@@ -5,30 +5,50 @@
       <a href="javascript:void(0)" @click="homeClick">Blog</a>
     </div>
     <div class="menu">
-      <a href="javascript:void(0)" @click="homeClick">首页</a>
-      <a href="javascript:void(0)" @click="articleClick">文章</a>
-      <a href="javascript:void(0)" @click="messageClick">留言</a>
-      <a href="javascript:void(0)" @click="aboutClick">关于</a>
+      <a
+        href="javascript:void(0)"
+        @click="homeClick"
+        :class="{ active: 'home' == this.$route.meta.name }"
+        >首页</a
+      >
+      <a
+        href="javascript:void(0)"
+        @click="articleClick"
+        :class="{ active: 'article' == this.$route.meta.name }"
+        >文章</a
+      >
+      <a
+        href="javascript:void(0)"
+        @click="messageClick"
+        :class="{ active: 'message' == this.$route.meta.name }"
+        >留言</a
+      >
+      <a
+        href="javascript:void(0)"
+        @click="aboutClick"
+        :class="{ active: 'about' == this.$route.meta.name }"
+        >关于</a
+      >
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  created() {
+    console.log(this.$route);
+  },
   methods: {
     homeClick() {
-      console.log("home");
       this.$router.push("/").catch((err) => err);
     },
     articleClick() {
-      console.log("article");
       this.$router.push("/article").catch((err) => err);
     },
     messageClick() {
-      this.$router.push("/message").catch((err) => err)
+      this.$router.push("/message").catch((err) => err);
     },
     aboutClick() {
-      console.log("about");
       this.$router.push("/about").catch((err) => err);
     },
   },
@@ -68,5 +88,21 @@ export default {
 
 .menu a {
   margin-left: 2.5rem;
+}
+
+.active {
+  color: #121212;
+  font-weight: 600;
+  position: relative;
+}
+
+.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -1.3rem;
+  left: 0;
+  height: 3px;
+  background: #06f;
+  content: "";
 }
 </style>
