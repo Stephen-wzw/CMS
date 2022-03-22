@@ -1,4 +1,4 @@
-# poet_blog
+# CMS
 
 ## Project setup
 ```
